@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link css here only when ccs is not imported in js yet -->
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
-    <title>Hello</title>
+    <meta name="description" content="Meteo application">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Météo</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- <script src="./js/app.js" type="module"></script> -->
+    <section class="weather-section">
+      <div class="container">
+        <h1 class="heading">Simple Weather App</h1>
+        <form>
+          <input type="text" placeholder="Search for a City" id="city-input">
+          <input type="submit" value="Submit">
+          <article class="meteo-card"></article>
+        </form>
+      </div>
+    </section>
+    <script src="./js/app.js" type="module"></script>
   </body>
 </html>
