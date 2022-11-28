@@ -1,4 +1,5 @@
 const config = import.meta.env;
+import { setupCard } from "./functions";
 
 const cityInput = document.getElementById('city-input');
 
@@ -13,6 +14,9 @@ document.addEventListener('submit', (e) => {
         .then(res => res.json())
         .then(res => {
             console.log(res);
+
+            setupCard(res.name, res.sys.country, parseInt(res.main.temp), res.weather[0].main, res.weather[0].icon)
+
         })
         .catch(err => { console.error(err) });
 })
