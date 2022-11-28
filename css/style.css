@@ -56,3 +56,11 @@ input[type=submit] {
     margin-top: 12%;
     width: 80%;
 }
+
+.meteo-card {
+    position: absolute;
+    margin-top: 35%;
+    height: 38%;
+    width: 80%;
+    background-color: var(--text_light);
+}
