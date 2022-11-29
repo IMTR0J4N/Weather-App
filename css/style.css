@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: var(--bg_main)    ;
+    background-color: var(--bg_main);
 }
 
 section {
@@ -24,7 +24,8 @@ section {
 h1 {
     font-family: Roboto;
     font-size: 45px;
-    text-align: center;
+    margin-top: 5%;
+    margin-left: 10%;
     color: var(--text_light);
 }
 
@@ -39,6 +40,7 @@ form {
 
 input[type=text] {
     height: 4%;
+    width: 79%;
     background-color: var(--bg_main);
     border: none;
     border-bottom: var(--text_light) solid 1px;
@@ -60,7 +62,10 @@ input[type=submit] {
     height: 5%;
     background-color: var(--red);
     border: none;
-    border-radius: 5%;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: Roboto;
+    color: var(--text_light);
     margin-top: 12%;
     width: 80%;
 }
@@ -76,15 +81,26 @@ input[type=submit] {
 }
 
 .meteo-card {
+    position: relative;
     height: 52%;
     width: 100%;
-    border-radius: 5%;
+    border-radius: 10px;
     background-color: var(--text_light);
 }
 
+.card-trash {
+    position: absolute;
+    bottom: 94%;
+    right: 2%;
+    height: 15px;
+    width: 15px;
+}
+
 .card-location {
+    position: absolute;
     margin-left: 10%;
-    margin-top: 10%;
+    bottom: 85%;
+    font-size: 100%;
     font-family: Roboto;
     color: var(--text_med);
 }
@@ -92,9 +108,9 @@ input[type=submit] {
 .card-location-span {
     position: absolute;
     text-align: center;
-    left: 24%;
-    width: 6%;
-    font-size: 10px;
+    margin-left: 2%;
+    width: 10%;
+    font-size: 60%;
     background-color: var(--orange);
     border-radius: 5px;
     color: var(--text_light);
@@ -104,23 +120,101 @@ input[type=submit] {
     position: absolute;
     font-family: Roboto;
     color: var(--text_dark);
-    font-size: 55px;
+    font-size: 400%;
     margin-left: 10%;
-    margin-top: 5%;
+    bottom: 50%;
 }
 
 .card-weather {
     position: absolute;
-    margin-top: 70%;
+    bottom: 10%;
     font-family: Roboto;
-    letter-spacing: 1px;
     font-size: 12px;
     color: var(--text_med);
-    margin-left: 10%;   
+    margin-left: 10%;
 }
 
 .card-weather-image {
     position: absolute;
-    margin-top: 25%;
+    bottom: 20%;
     margin-left: 5%;
+}
+
+@media (width >=500px) {
+
+    .meteo-card {
+        width: 45%;
+    }
+
+    .card-location {
+        bottom: 80%;
+    }
+
+    .card-trash {
+        bottom: 93%;
+    }
+}
+
+@media (width >=700px) {
+
+    .meteo-card {
+        width: 31%;
+    }
+
+    .card-location {
+        bottom: 75%;
+    }
+
+    .card-trash {
+        bottom: 92%;
+    }
+
+    input[type=text] {
+        position: absolute;
+        width: 35%;
+        left: 10%;
+    }
+
+    input[type=submit] {
+        position: absolute;
+        width: 12%;
+        bottom: 95.5%;
+        left: 48%;
+    }
+
+    #card-container {
+        margin-top: 15%;
+    }
+}
+
+@media (width >=1000px) {
+    .meteo-card {
+            width: 20%;
+        }
+    
+        .card-location {
+            bottom: 75%;
+        }
+    
+        .card-trash {
+            bottom: 92%;
+        }
+    
+        input[type=text] {
+            bottom: 130%;
+            position: absolute;
+            width: 20%;
+            left: 10%;
+        }
+    
+        input[type=submit] {
+            position: absolute;
+            width: 5%;
+            bottom: 130%;
+            left: 31%;
+        }
+    
+        #card-container {
+            margin-top: 5%;
+        }
 }
