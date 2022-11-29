@@ -1,3 +1,5 @@
+const config = import.meta.env;
+
 const cardContainer = document.getElementById('card-container');
 
 let articlesTrash = [];
@@ -40,4 +42,18 @@ const dlCard = card => {
     card.parentElement.remove()
 }
 
-export { setupCard };
+const success = pos => {
+    console.log(pos.coords);
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&appid=${config.VITE_API_KEY}&units=metric`)
+        .then(res => res.json())
+        .then(res => {
+            setupCard(res.name, res.sys.country, parseInt(res.main.temp), res.weather[0].main, res.weather[0].icon)
+        })
+        .catch(err => { console.error(err) });
+}
+
+const error = err => {
+    return console.warn(`ERREUR (${err.code}): ${err.message}`);
+}
+
+export { setupCard, success, error };
